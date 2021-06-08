@@ -51,3 +51,7 @@
     - `addName() {}` is ES2015 syntax
     - `addname: function() {}` is traditional syntax
     - When referencing properties in the data object, everything will be proxied correctly, so we can reference values from data, with the `this` keyword
+    - `v-on:keyUp`
+    - You can reference any of the native event names
+    - `@click`
+    - You can replace `v-on:` with the `@` symbol for shorthand
