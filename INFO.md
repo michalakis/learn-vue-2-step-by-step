@@ -34,5 +34,10 @@
     - The data object defines the truth
   
 - ### Episode 03: Lists
-  
+    - `v-for`
+    - `v-text`
+    - `<li v-for="name in names" v-text="name"></li>`
+    - `mounted()` 
+    - `mounted()` is a special method triggered by Vue once the instance has been mounted, once everything is ready to go, once events have been registered, once everything has been bound, once we are mounted and ready to go, run this
+    
     
