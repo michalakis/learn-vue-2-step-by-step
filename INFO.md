@@ -57,6 +57,7 @@
     - You can replace `v-on:` with the `@` symbol for shorthand
     
 - ### Episode 05: Attribute and Class Binding
+  
     - `<button title="Some title that will appear on hover">Some Text</button>`
     - `Attribute binding` is accomplished by using the `v-bind` directive    
     - `v-bind:title="name of variable inside the data object"`
@@ -65,3 +66,23 @@
     - We can dynamically add/remove classes
     - `:class = { 'is-loading': isLoading }`
     - Add a class of `is-loading`, if isLoading evaluates to true
+  
+- ### Episode 06: The Need for Computed Properties
+  
+    - `Computed properties` are for when you need to compute something before rendering it onto the page
+    - You can use any expression you want inside directives
+    - `v-text="new Date()"`
+    - `{{ message.split('').reverse().join('') }}` 
+    - `Computed properties` are returned by methods which reside inside the `computed` object
+    - They are referenced without the brackets
+    - `v-if`
+    - `v-else`
+    - `Computed properties` are cached
+    - `Computed properties` are reactive
+    - You can access the app Instance in the console with the variable `app`
+  
+- ### Episode 07: Components 101
+
+    -   
+
+  

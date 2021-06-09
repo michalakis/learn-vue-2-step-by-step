@@ -26,7 +26,19 @@
         <input id="input" type="text" v-model="newName" v-on:keyUp="addName">
         <button :title="title" :class="{ 'is-loading': isLoading }" @click="toggleClass">Toggle Me</button>
 
-        <h1 :class="className">Hello World</h1>
+        <h1 :class="className">{{ reversedMessage }}</h1>
+
+        <h1>All Tasks</h1>
+
+        <ul>
+            <li v-for="task in tasks" v-text="task.description"></li>
+        </ul>
+
+        <h1>Incomplete tasks</h1>
+
+        <ul>
+            <li v-for="task in incompleteTasks" v-text="task.description"></li>
+        </ul>
 
     </div>
 
@@ -42,7 +54,18 @@
                 title: 'Add a new name on click',
                 className: 'color-red',
                 isLoading: false,
-                disabled: false
+                disabled: false,
+                message: 'Hello World',
+                tasks: [
+                    {description: 'task 1', completed: true},
+                    {description: 'task 9', completed: false},
+                    {description: 'task 3', completed: true},
+                    {description: 'task 88', completed: true},
+                    {description: 'task 4', completed: true},
+                    {description: 'task 13', completed: false},
+                    {description: 'task 7', completed: true},
+                    {description: 'task 5', completed: false}
+                ]
             },
             methods: {
                 addName() {
@@ -56,6 +79,14 @@
                 }
             },
             mounted() {
+            },
+            computed: {
+                reversedMessage() {
+                    return this.message.split('').reverse().join('')
+                },
+                incompleteTasks() {
+                    return this.tasks.filter(task => !task.completed);
+                }
             }
         });
 
