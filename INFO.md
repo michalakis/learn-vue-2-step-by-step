@@ -83,6 +83,21 @@
   
 - ### Episode 07: Components 101
 
-    -   
+    - It is considered a `best practice` to use a hyphen in `component` names, so that it does not clash with names provided by the spec
+    - `Vue.component('task-list', {
+        template: '<li>Foobar</li>'
+      })` 
+    - You then reference the component in the html as a html tag
+    - To make the content dynamic, add a `slot` to the template, anything included inside the html tag, will replace the `slot`
+    - `Vue.component('task', {
+        template: '<li><slot></slot></li>'
+      });`
+    - `Vue.component()` defines a `global` component
+    - You can give a `componeent` it's own set of data by returning an object
+    - For regular `Vue` instances, you can set `data` equal to an object
+    - We cannot do that for `components`, because it's not linked to any single instance
+    - Data can be equal to a `function` that returns an object 
+  
+- ### Episode 08: Components Within Components
 
   

@@ -4,94 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .color-red {
-            color: red;
-        }
-        .color-blue {
-            color: blue;
-        }
-        .is-loading {
-            background: red;
-        }
-    </style>
+    <title>Learn Vue 2: Step By Step</title>
 </head>
 <body>
 
     <div id="root">
-        <ul>
-            <li v-for="name in names" v-text="name"></li>
-        </ul>
-        <input id="input" type="text" v-model="newName" v-on:keyUp="addName">
-        <button :title="title" :class="{ 'is-loading': isLoading }" @click="toggleClass">Toggle Me</button>
 
-        <h1 :class="className">{{ reversedMessage }}</h1>
-
-        <h1>All Tasks</h1>
-
-        <ul>
-            <li v-for="task in tasks" v-text="task.description"></li>
-        </ul>
-
-        <h1>Incomplete tasks</h1>
-
-        <ul>
-            <li v-for="task in incompleteTasks" v-text="task.description"></li>
-        </ul>
+        <task>Go to the store</task>
+        <task>task 2</task>
+        <task>hello</task>
 
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-
-    <script>
-
-        const app = new Vue({
-            el: '#root',
-            data: {
-                newName: '',
-                names: ['Joe', 'Mary', 'Jane', 'Jack'],
-                title: 'Add a new name on click',
-                className: 'color-red',
-                isLoading: false,
-                disabled: false,
-                message: 'Hello World',
-                tasks: [
-                    {description: 'task 1', completed: true},
-                    {description: 'task 9', completed: false},
-                    {description: 'task 3', completed: true},
-                    {description: 'task 88', completed: true},
-                    {description: 'task 4', completed: true},
-                    {description: 'task 13', completed: false},
-                    {description: 'task 7', completed: true},
-                    {description: 'task 5', completed: false}
-                ]
-            },
-            methods: {
-                addName() {
-                    this.names.push(this.newName);
-
-                    this.newName = '';
-                },
-                toggleClass() {
-
-                    this.isLoading = true;
-                }
-            },
-            mounted() {
-            },
-            computed: {
-                reversedMessage() {
-                    return this.message.split('').reverse().join('')
-                },
-                incompleteTasks() {
-                    return this.tasks.filter(task => !task.completed);
-                }
-            }
-        });
-
-
-    </script>
+    <script src="main.js"></script>
 
 </body>
 </html>
