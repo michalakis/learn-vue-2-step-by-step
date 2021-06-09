@@ -5,6 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .color-red {
+            color: red;
+        }
+        .color-blue {
+            color: blue;
+        }
+        .is-loading {
+            background: red;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,7 +24,9 @@
             <li v-for="name in names" v-text="name"></li>
         </ul>
         <input id="input" type="text" v-model="newName" v-on:keyUp="addName">
-        <button @click="addName">Add Name</button>
+        <button :title="title" :class="{ 'is-loading': isLoading }" @click="toggleClass">Toggle Me</button>
+
+        <h1 :class="className">Hello World</h1>
 
     </div>
 
@@ -25,13 +38,21 @@
             el: '#root',
             data: {
                 newName: '',
-                names: ['Joe', 'Mary', 'Jane', 'Jack']
+                names: ['Joe', 'Mary', 'Jane', 'Jack'],
+                title: 'Add a new name on click',
+                className: 'color-red',
+                isLoading: false,
+                disabled: false
             },
             methods: {
                 addName() {
                     this.names.push(this.newName);
 
                     this.newName = '';
+                },
+                toggleClass() {
+
+                    this.isLoading = true;
                 }
             },
             mounted() {

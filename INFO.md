@@ -55,3 +55,13 @@
     - You can reference any of the native event names
     - `@click`
     - You can replace `v-on:` with the `@` symbol for shorthand
+    
+- ### Episode 05: Attribute and Class Binding
+    - `<button title="Some title that will appear on hover">Some Text</button>`
+    - `Attribute binding` is accomplished by using the `v-bind` directive    
+    - `v-bind:title="name of variable inside the data object"`
+    - Use the colon only as shorthand
+    - `:title="title"`
+    - We can dynamically add/remove classes
+    - `:class = { 'is-loading': isLoading }`
+    - Add a class of `is-loading`, if isLoading evaluates to true
