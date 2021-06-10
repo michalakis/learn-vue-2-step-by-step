@@ -2,120 +2,122 @@
 
 - ### Episode 01: Basic Data Binding
   
-    - We can bind a value, or a property to the value of an input
-    - You would usually dive into the dom, fetch some elements, and manipulate them
-    - Automatic `data binding`, bind the value of this input, to this property, when one changes, update the other
-    - `Vue` does all these things for us
-    - `new Vue({
-        data: data
-      });`
-    - We pass in the data, or the model for the instance
-    - Next we must define the surface area 
-    - We tell it where it will be available, and it will not function outside that area 
-    - `new Vue({
-        el: '#root',
-        data: data
-      });`
-    - `v-model` is a vue directive, it is a directive specifically for form inputs and controls
-    - All `vue directives` begin with `v-`
-    - `<input type="text" id="input" v-model="message">`
-    - You can spit out the contents of a property by surrounding it with double curly braces
-    - `{{ message }}`
-    - Key steps:
-      1. Create a `Vue` instance
-      2. Bind it to an element in the `DOM`
-      3. Specify some data, this is like a model for the vue
+  - We can bind a value, or a property to the value of an input
+  - You would usually dive into the dom, fetch some elements, and manipulate them
+  - Automatic `data binding`, bind the value of this input, to this property, when one changes, update the other
+  - `Vue` does all these things for us
+  - `new Vue({
+      data: data
+    });`
+  - We pass in the data, or the model for the instance
+  - Next we must define the surface area 
+  - We tell it where it will be available, and it will not function outside that area 
+  - `new Vue({
+      el: '#root',
+      data: data
+    });`
+  - `v-model` is a vue directive, it is a directive specifically for form inputs and controls
+  - All `vue directives` begin with `v-`
+  - `<input type="text" id="input" v-model="message">`
+  - You can spit out the contents of a property by surrounding it with double curly braces
+  - `{{ message }}`
+  - Key steps:
+    1. Create a `Vue` instance
+    2. Bind it to an element in the `DOM`
+    3. Specify some data, this is like a model for the vue
   
 - ### Episode 02: Setup Vue Devtools
   
-    - [Install Vue Devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en)
-    - If we change the view i.e., update the input, the underlying data object changes at the same time
-    - Two-way reactivity, when we change it on the data level, it will be reflected in the view, if we update the view, the data object is updated
-    - This is known as the single source of truth
-    - The data object defines the truth
+  - [Install Vue Devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en)
+  - If we change the view i.e., update the input, the underlying data object changes at the same time
+  - Two-way reactivity, when we change it on the data level, it will be reflected in the view, if we update the view, the data object is updated
+  - This is known as the single source of truth
+  - The data object defines the truth
   
 - ### Episode 03: Lists
   
-    - `v-for`
-    - `v-text`
-    - `<li v-for="name in names" v-text="name"></li>`
-    - `mounted()` 
-    - `mounted()` is a special method triggered by Vue once the instance has been mounted, once everything is ready to go, once events have been registered, once everything has been bound, once we are mounted and ready to go, run this
+  - `v-for`
+  - `v-text`
+  - `<li v-for="name in names" v-text="name"></li>`
+  - `mounted()` 
+  - `mounted()` is a special method triggered by Vue once the instance has been mounted, once everything is ready to go, once events have been registered, once everything has been bound, once we are mounted and ready to go, run this
     
 - ### Episode 04: Vue Event Listeners
     
-    - `v-on` directive, is used to register event listeners with vue
-    - For directives, everything on the left of the colon is the name of the directive, anything after the colon can be considered the argument 
-    - In the value, we can reference any expression we want, we can update a variable/property, or reference a method
-    - Any custom methods we add should be nested within the custom `methods()` object
-    - `addName() {}` is ES2015 syntax
-    - `addname: function() {}` is traditional syntax
-    - When referencing properties in the data object, everything will be proxied correctly, so we can reference values from data, with the `this` keyword
-    - `v-on:keyUp`
-    - You can reference any of the native event names
-    - `@click`
-    - You can replace `v-on:` with the `@` symbol for shorthand
+  - `v-on` directive, is used to register event listeners with vue
+  - For directives, everything on the left of the colon is the name of the directive, anything after the colon can be considered the argument 
+  - In the value, we can reference any expression we want, we can update a variable/property, or reference a method
+  - Any custom methods we add should be nested within the custom `methods()` object
+  - `addName() {}` is ES2015 syntax
+  - `addname: function() {}` is traditional syntax
+  - When referencing properties in the data object, everything will be proxied correctly, so we can reference values from data, with the `this` keyword
+  - `v-on:keyUp`
+  - You can reference any of the native event names
+  - `@click`
+  - You can replace `v-on:` with the `@` symbol for shorthand
     
 - ### Episode 05: Attribute and Class Binding
   
-    - `<button title="Some title that will appear on hover">Some Text</button>`
-    - `Attribute binding` is accomplished by using the `v-bind` directive    
-    - `v-bind:title="name of variable inside the data object"`
-    - Use the colon only as shorthand
-    - `:title="title"`
-    - We can dynamically add/remove classes
-    - `:class = { 'is-loading': isLoading }`
-    - Add a class of `is-loading`, if isLoading evaluates to true
+  - `<button title="Some title that will appear on hover">Some Text</button>`
+  - `Attribute binding` is accomplished by using the `v-bind` directive    
+  - `v-bind:title="name of variable inside the data object"`
+  - Use the colon only as shorthand
+  - `:title="title"`
+  - We can dynamically add/remove classes
+  - `:class = { 'is-loading': isLoading }`
+  - Add a class of `is-loading`, if isLoading evaluates to true
   
 - ### Episode 06: The Need for Computed Properties
   
-    - `Computed properties` are for when you need to compute something before rendering it onto the page
-    - You can use any expression you want inside directives
-    - `v-text="new Date()"`
-    - `{{ message.split('').reverse().join('') }}` 
-    - `Computed properties` are returned by methods which reside inside the `computed` object
-    - They are referenced without the brackets
-    - `v-if`
-    - `v-else`
-    - `Computed properties` are cached
-    - `Computed properties` are reactive
-    - You can access the app Instance in the console with the variable `app`
+  - `Computed properties` are for when you need to compute something before rendering it onto the page
+  - You can use any expression you want inside directives
+  - `v-text="new Date()"`
+  - `{{ message.split('').reverse().join('') }}` 
+  - `Computed properties` are returned by methods which reside inside the `computed` object
+  - They are referenced without the brackets
+  - `v-if`
+  - `v-else`
+  - `Computed properties` are cached
+  - `Computed properties` are reactive
+  - You can access the app Instance in the console with the variable `app`
   
 - ### Episode 07: Components 101
 
-    - It is considered a `best practice` to use a hyphen in `component` names, so that it does not clash with names provided by the spec
-    - `Vue.component('task-list', {
-        template: '<li>Foobar</li>'
-      })` 
-    - You then reference the component in the html as a html tag
-    - To make the content dynamic, add a `slot` to the template, anything included inside the html tag, will replace the `slot`
-    - `Vue.component('task', {
-        template: '<li><slot></slot></li>'
-      });`
-    - `Vue.component()` defines a `global` component
-    - You can give a `componeent` it's own set of data by returning an object
-    - For regular `Vue` instances, you can set `data` equal to an object
-    - We cannot do that for `components`, because it's not linked to any single instance
-    - Data can be equal to a `function` that returns an object 
+  - It is considered a `best practice` to use a hyphen in `component` names, so that it does not clash with names provided by the spec
+  - `Vue.component('task-list', {
+      template: '<li>Foobar</li>'
+    })` 
+  - You then reference the component in the html as a html tag
+  - To make the content dynamic, add a `slot` to the template, anything included inside the html tag, will replace the `slot`
+  - `Vue.component('task', {
+      template: '<li><slot></slot></li>'
+    });`
+  - `Vue.component()` defines a `global` component
+  - You can give a `componeent` it's own set of data by returning an object
+  - For regular `Vue` instances, you can set `data` equal to an object
+  - We cannot do that for `components`, because it's not linked to any single instance
+  - Data can be equal to a `function` that returns an object 
   
 - ### Episode 08: Components Within Components
 
-    - You can reference a component within another component
-    - You cannot use `v-for` when the parent element is the app root element `(Cannot use v-for on stateful component root elements because it renders multiple elements)`
-    - Whenever you have a `template` inside a `component` it always needs to have a `single root element`
-    - `ES6` `template syntax`, wrap the code in backticks to make it a template literal, you can then create multi-line strings where new lines are part of the `template literal`, you can also use string interpolation
-    -  template: `
-        <ul>
-            <task v-for="task in tasks">{{ task.task }}</task>
-        </ul>`
+  - You can reference a component within another component
+  - You cannot use `v-for` when the parent element is the app root element `(Cannot use v-for on stateful component root elements because it renders multiple elements)`
+  - Whenever you have a `template` inside a `component` it always needs to have a `single root element`
+  - `ES6` `template syntax`, wrap the code in backticks to make it a template literal, you can then create multi-line strings where new lines are part of the `template literal`, you can also use string interpolation
+  -  template: `
+      <ul>
+          <task v-for="task in tasks">{{ task.task }}</task>
+      </ul>`
        
 - ### Episode 09: Practical Component Exercise #1: Message
 
-    - [Bulma CSS Framework](https://bulma.io/)
-    - The recommendation is to use a hyphenated name for components
-    - Some people use their business name 
-    - With components, you have to be explicit with the properties
-    - `v-show`
-    - `data-centric` approach rather than diving into the DOM
+  - [Bulma CSS Framework](https://bulma.io/)
+  - The recommendation is to use a hyphenated name for components
+  - Some people use their business name 
+  - With components, you have to be explicit with the properties
+  - `v-show`
+  - `data-centric` approach rather than diving into the DOM
   
-- 
+- ### Episode 10: Practical Components Exercise #2: Modal
+
+  - 
