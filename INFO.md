@@ -100,4 +100,11 @@
   
 - ### Episode 08: Components Within Components
 
-  - testing github
+    - You can reference a component within another component
+    - You cannot use `v-for` when the parent element is the app root element `(Cannot use v-for on stateful component root elements because it renders multiple elements)`
+    - Whenever you have a `template` inside a `component` it always needs to have a `single root element`
+    - `ES6` `template syntax`, wrap the code in backticks to make it a template literal, you can then create multi-line strings where new lines are part of the `template literal`, you can also use string interpolation
+    -  template: `
+        <ul>
+            <task v-for="task in tasks">{{ task.task }}</task>
+        </ul>`
