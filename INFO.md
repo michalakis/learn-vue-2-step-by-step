@@ -108,3 +108,14 @@
         <ul>
             <task v-for="task in tasks">{{ task.task }}</task>
         </ul>`
+       
+- ### Episode 09: Practical Component Exercise #1: Message
+
+    - [Bulma CSS Framework](https://bulma.io/)
+    - The recommendation is to use a hyphenated name for components
+    - Some people use their business name 
+    - With components, you have to be explicit with the properties
+    - `v-show`
+    - `data-centric` approach rather than diving into the DOM
+  
+- 

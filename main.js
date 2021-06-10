@@ -1,31 +1,20 @@
-Vue.component('task-list', {
+Vue.component('message', {
+    props: ['title', 'body'],
+    data() {
+        return {
+            isVisible: true
+        }
+    },
     template: `
-        <ul>
-            <task v-for="task in tasks">{{ task.task }}</task>
-        </ul>`,
-
-    data() {
-
-        return {
-            tasks: [
-                { task: 'task 1', complete: true},
-                { task: 'task 2', complete: false},
-                { task: 'task 3', complete: true},
-                { task: 'task 4', complete: false},
-            ]
-        }
-    }
-});
-
-Vue.component('task', {
-    template: '<li><slot></slot></li>',
-
-    data() {
-
-        return {
-            message: 'Foobar'
-        }
-    }
+        <article class="message" v-show="isVisible">
+            <div class="message-header">
+                <p>{{ title }}</p>
+                <button class="delete" aria-label="delete" @click="isVisible = false"></button>
+            </div>
+            <div class="message-body">
+                {{ body }}
+            </div>
+        </article>`
 });
 
 new Vue({
