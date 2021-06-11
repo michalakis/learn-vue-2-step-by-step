@@ -128,5 +128,11 @@
   - `$emit('close')`
   
 - ### Episode 11: Practical Components Exercise #3: Tabs
+
+  - Check out `emmet`
+  - We use `v-bind:` or just `:` to specify that is an object/boolean, and not a string
+  - A `component` must have one master/parent/top level element only
+  - `this.$children` returns all the children of the parent root element
+  - You have to be explicit about the props you accept
   
     

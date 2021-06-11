@@ -19,9 +19,25 @@
 
     <div id="root" class="container">
 
-        <modal v-if="showModal" @close="showModal = false"></modal>
+        <tabs>
 
-        <button @click="showModal = true">Show Modal</button>
+            <tab name="About Us" :selected="true">
+                <h1>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </h1>
+            </tab>
+            <tab name="About Our Culture" >
+                <h1>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </h1>
+            </tab>
+            <tab name="About Our Vission">
+                <h1>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </h1>
+            </tab>
+
+        </tabs>
 
     </div>
 
