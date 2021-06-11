@@ -120,4 +120,10 @@
   
 - ### Episode 10: Practical Components Exercise #2: Modal
 
-  - 
+  - The `box` class in bulma adds a background color and some padding
+  - `@click` is an official event
+  - Vue allows you to have `custom events`
+  - You can `emit()` an event
+  - `@close="showModal = false"`
+  - `$emit('close')`
+  
