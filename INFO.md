@@ -127,3 +127,6 @@
   - `@close="showModal = false"`
   - `$emit('close')`
   
+- ### Episode 11: Practical Components Exercise #3: Tabs
+  
+    
