@@ -129,10 +129,45 @@
   
 - ### Episode 11: Practical Components Exercise #3: Tabs
 
+  - [Episode Gist](https://gist.github.com/JeffreyWay/f844ca4dd1887d566759849665068162)
   - Check out `emmet`
   - We use `v-bind:` or just `:` to specify that is an object/boolean, and not a string
   - A `component` must have one master/parent/top level element only
   - `this.$children` returns all the children of the parent root element
-  - You have to be explicit about the props you accept
+  - You have to be explicit about the `props` you accept
+  - `props: {
+      name: { required: true }
+    }`
+  - You need to be explicit about the data the component or instance exposes, i.e., declare the data in the `data()` method
+  - `data() {
+      return  { tabs: [] };
+    }`
+  - `create()` runs code when component is created
+  - `props: {
+      name: { required: true },
+      selected: { default: false }
+    }`
+  - `:class="{ 'is-active': tab.selected }"`
+  - When you `bind` a property inside a component, it seems that you can return a string depending on the value of the bound property
+  - `@click="selectTab(tab, $event)"`
+  - `methods: {
+      selectTab(tab) {
+        alert(tab);
+      }
+    }`
+  - For `components`, `methods` is a `property` that accepts an object, `data()`, `created()` and `mounted()` are methods.
+  - The `data()` method inside `components` returns an object
+  - `this.tabs.forEach(tab => {
+        tab.isActive = (tab.name = selectedTab.name);
+    });`
+  - Vue doesn't like this way of using javascript to mutate a prop directly, since the value will be overwritten whenever the parent component re-render
+  - Instead, use a data or computed property based on the prop's value
+  - Consider the properties the component accepts as immutable
+  - If you need mutability, you could create a computed property, or a piece of data 
+  - Think of a component as `php class` were you define `properties` and `methods`
+  - `computed: {
+        href() {
+            return '#' + this.name.toLowerCase().replace(/ /g, '-');
+        }
+    }`
   
-    
