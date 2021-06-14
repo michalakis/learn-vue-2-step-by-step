@@ -19,30 +19,9 @@
 
     <div id="root" class="container">
 
-        <tabs>
+        <coupon @applied="onCouponApplied"></coupon>
 
-            <tab name="About Us" :selected="true">
-                <h1>
-                    Lorem ipsum dolor sit amet
-                </h1>
-            </tab>
-            <tab name="About Our Culture" >
-                <h1>
-                    Lorem ipsum dolor sit amet, consectetur
-                </h1>
-            </tab>
-            <tab name="About Our Vission">
-                <h1>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing
-                </h1>
-            </tab>
-            <tab name="Another tab">
-                <h1>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </h1>
-            </tab>
-
-        </tabs>
+        <h1 v-if="couponApplied">Coupon Applied</h1>
 
     </div>
 

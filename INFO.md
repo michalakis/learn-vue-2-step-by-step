@@ -171,3 +171,12 @@
         }
     }`
   
+- ### Episode 12: Component Communication Example #1: Custom Events
+  
+  - `v-on` is a good way for the child component to communicate with the parent
+  - `v-on:applied` or `@applied` lets the parent know when it has been applied, and the parent runs a method
+  - Prepare your `Vue` instance at the bottom of your `JS` code, so that components are already declared when the root is instantiated
+  - Q: How does `Vue` known which instance to bind the components to, if The `root Vue instance` is not saved into a variable
+  - `@blur` fires when we click away from a form input, the opposite of `@focus`
+  - `this.$emit('applied')`
+  - You can access component or root properties in the html without the `this` keyword
