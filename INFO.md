@@ -180,3 +180,11 @@
   - `@blur` fires when we click away from a form input, the opposite of `@focus`
   - `this.$emit('applied')`
   - You can access component or root properties in the html without the `this` keyword
+  
+- ### Episode 13: Component Communication Example #2: Event Dispatcher
+  
+  - `this.#emit('applied')` broadcast
+  - `this.$on('applied)` listen
+  - Every `Vue` instance has access to these event structures, it has the ability to listen, and emit events
+  - `new Vue()` is a `root Vue instance`
+  - We can create a new `root Vue instance`, so that the event can be accessible from all other instances and components
