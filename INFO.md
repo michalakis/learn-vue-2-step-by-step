@@ -188,3 +188,15 @@
   - Every `Vue` instance has access to these event structures, it has the ability to listen, and emit events
   - `new Vue()` is a `root Vue instance`
   - We can create a new `root Vue instance`, so that the event can be accessible from all other instances and components
+  
+- ### Episode 14: Named Slots in a Nutshell
+
+  - `<slot name="header"></slot>`
+  - `<template slot="header">My Title</template>` this doesn't wrap an element around the inner text
+  - `<h1 slot="header">My Title</h1>` this wraps an h1 element around the inner text
+  - `<slot></slot>` this is the default slot
+  - You can use named slots and default slots in tandem
+  - Anything not wrapped in a name slot, will be inserted into the default slot
+  - `<slot>Default slot content</slot>`
+  - You can have default slot content inside the template default slot, it will appear if there is no default slot content provided
+  
